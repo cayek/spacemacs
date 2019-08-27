@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: R_plot
+# key: <Rp
+# --
+#+CAPTION: This code chunk depends on [[${1:R_init}]]
+#+NAME: R_${2:plot}_${3:data}
+#+BEGIN_SRC R :file ${4:$$(make-temp-name "./plots/R-")}-$3.png :height 450 :width 450 :results graphics
+$0
+#+END_SRC

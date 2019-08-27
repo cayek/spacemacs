@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: R table
+# key: <Rt
+# --
+#+CAPTION: This code chunk depends on [[${1:R_init}]]
+#+NAME: R_${2:plot}_${3:data}
+#+BEGIN_SRC R :results value :colnames yes
+$0
+#+END_SRC

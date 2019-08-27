@@ -1,0 +1,15 @@
+# -*- mode: snippet -*-
+# name: R_ggplot
+# key: <Rgp
+# --
+#+CAPTION: This code chunk depends on [[${1:R_init}]]
+#+NAME: R_${2:plot}_${3:data}
+#+BEGIN_SRC R :results none
+$0
+ggsave('${4:$$(make-temp-name "./plots/R-")}-$3.png', width = 5, height = 5, dpi = 300)
+#+END_SRC
+
+#+CAPTION: $4-$3.png
+#+NAME: R_$2_$3
+#+RESULTS: R_$2_$3
+[[$4-$3.png]]

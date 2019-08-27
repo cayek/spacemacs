@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: properties header-args
+# key: prop_header_args_
+# --
+:PROPERTIES:
+:header-args: :session *${1:Python}* :exports ${2:$$(yas-choose-value '("results" "both"))} :eval no-export :async t
+:END:

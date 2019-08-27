@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: ipy
+# key: <p
+# --
+#+CAPTION: This code chunk depends on [[ipyt_init]]
+#+NAME: ipyt_${2:verb}_${3:data}
+#+BEGIN_SRC ipython
+$0
+#+END_SRC

@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: code chunk with name
+# key: <S
+# --
+#+NAME: ${1:lang}_${2:verb}_${3:data}
+#+BEGIN_SRC $1
+$0
+#+END_SRC

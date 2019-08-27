@@ -1,0 +1,19 @@
+# -*- mode: snippet -*-
+# name: reveal
+# key: reveal_
+# --
+# -*- coding: utf-8 -*-
+# -*- mode: org -*-
+
+#+TITLE: ${1:TITLE}
+#+AUTHOR: Kévin CAYE
+#+LANGUAGE: fr
+
+# reveal options: see https://github.com/yjwen/org-reveal
+#+REVEAL_ROOT: http://cdn.jsdelivr.net/reveal.js/3.0.0/
+#+REVEAL_TRANS: none
+#+OPTIONS: reveal_center:nil
+#+OPTIONS: reveal_width:1200 reveal_height:800
+#+REVEAL_THEME: white
+#+REVEAL_HLEVEL: 0 ## all header on same lvl
+#+REVEAL_SPEED: fast

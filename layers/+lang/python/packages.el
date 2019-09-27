@@ -22,7 +22,6 @@
         helm-cscope
         helm-gtags
         (helm-pydoc :requires helm)
-        importmagic
         live-py-mode
         (nose :location local)
         org

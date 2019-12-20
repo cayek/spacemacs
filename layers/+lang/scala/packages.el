@@ -12,7 +12,7 @@
 (setq scala-packages
       '(
         ensime
-        (lsp-scala :requires lsp-mode)
+        lsp-mode
         ggtags
         counsel-gtags
         helm-gtags
@@ -163,8 +163,7 @@
   ;; Don't use scala checker if ensime mode is active, since it provides
   ;; better error checking.
   (with-eval-after-load 'flycheck
-    (add-hook 'ensime-mode-hook 'spacemacs//scala-disable-flycheck-scala)
-    (add-hook 'lsp-scala-)))
+    (add-hook 'ensime-mode-hook 'spacemacs//scala-disable-flycheck-scala)))
 
 (defun scala/post-init-flyspell ()
   (spell-checking/add-flyspell-hook 'scala-mode)
@@ -187,6 +186,8 @@
      'minibuffer-complete-word
      'self-insert-command
      minibuffer-local-completion-map)
+    ;; sbt-supershell kills sbt-mode:  https://github.com/hvesalai/emacs-sbt-mode/issues/152
+    (setq sbt:program-options '("-Dsbt.supershell=false"))
     :init
     (progn
       (spacemacs/declare-prefix-for-mode 'scala-mode "mb" "sbt")
@@ -270,14 +271,9 @@ If it's part of a left arrow (`<-'),replace it with the unicode arrow."
             scala-indent:default-run-on-strategy
             scala-indent:operator-strategy))))
 
-(defun scala/init-lsp-scala ()
-  (use-package lsp-scala
-    :after scala-mode
-    :demand t
-    :if (spacemacs//scala-backend-metals-p)
-    :config
-    (add-hook 'scala-mode-local-vars-hook #'spacemacs//scala-setup-metals)
-    :hook ((scala-mode) . lsp)))
+(defun scala/post-init-lsp-mode ()
+  (when (spacemacs//scala-backend-metals-p)
+    (spacemacs//scala-setup-metals)))
 
 (defun scala/post-init-ggtags ()
   (add-hook 'scala-mode-local-vars-hook #'spacemacs/ggtags-mode-enable))

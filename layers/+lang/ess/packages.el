@@ -62,7 +62,14 @@
   (setq spacemacs/ess-config
         '(progn
            ;; Follow Hadley Wickham's R style guide
-           (setq ess-default-style 'RStudio)
+           (setq ess-first-continued-statement-offset 2
+                 ess-continued-statement-offset 0
+                 ess-expression-offset 2
+                 ess-nuke-trailing-whitespace-p t
+                 ess-default-style 'DEFAULT)
+
+           ;; add support for evil states
+           (evil-set-initial-state 'ess-help-mode 'motion)
 
            (define-key ess-doc-map "h" 'ess-display-help-on-object)
            (define-key ess-doc-map "p" 'ess-R-dv-pprint)

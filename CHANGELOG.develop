@@ -332,6 +332,7 @@ sane way, here is the complete list of changed key bindings
 - crystal (thanks to Sylvain Benner)
 - dart (thanks to Bruno Tavares)
 - dhall (thanks to Colin Woodbury)
+- elasticsearch (thanks to Jean Rigotti)
 - factor (thanks to timor)
 - forth (thanks to Tim Jaeger)
 - gpu (thanks to Evan Klitzke)
@@ -1258,6 +1259,7 @@ Other:
   - Fixed searching in the =helm-find-file= actions (thanks to duianto)
   - Fixed =evilified-state=, mapped ~C-w~ to =evil-window-map=
     (thanks to Muneeb Shaikh)
+  - Fixed ~SPC h f~ =helm-spacemacs-help-faq= (thanks to duianto)
 *** Layer changes and fixes
 **** Agda
 - Fixes
@@ -2582,8 +2584,9 @@ Other:
 - Added support for CUSTOM_ID in latex exports (thanks to Compro-Prasad)
 - Added =ox-jira= as org export backend (thanks to Sebastian Nagel)
 - Added =helm-org= package (thanks to Simon Pintarelli)
-- Fixed evil-normal-state ~ESC~ after exiting =org-present-mode=
-  (thanks to duianto)
+- Fixed evil-normal-state ~ESC~ after exiting =org-present-mode= (thanks to duianto)
+- Fixed =org-present=: exiting presentation always removes inline images (thanks to Keith Pinson)
+- Replace =org-toggle-latex-fragment= with =org-latex-preview= (thanks to Tianshu Wang)
 **** Osx
 - Fixed OSX mapping issue (thanks to Joey Liu)
 - Added layer variables to customize modifier behaviors on macOS:
@@ -2650,6 +2653,8 @@ Other:
 - Allow adding node_modules/.bin path to exec-path (thanks to Anupam Jain)
 - Improved purescript keybinding discoverability & ergonomics.
   (thanks to Jason Walker)
+- Added =purescript-mode= to =spacemacs-indent-sensitive-modes=
+  (thanks to Hideaki Kawai)
 **** Python
 - Various fixes in =pylookup.py= (thanks to ishestakov and Shitikanth Kashyap)
 - Hide =yapf-mode= modeline lighter (thanks to Robert ven der Helm)
@@ -3059,6 +3064,7 @@ Other:
 - Added support for kaolin themes (thanks to William Roe)
 - Added support for eziam themes (thanks to Benno Fünfstück)
 - Enabled italics in spacemacs theme (thanks to Sylvain Benner)
+- Added support for =doom-dark+= theme (thanks to Ivan Yonchovski)
 ***** Colors
 - Multiple improvements (thanks to SteveJobzniak):
   - Added ability to set default rainbow-identifiers values
@@ -3097,6 +3103,10 @@ Other:
   be controlled by directly setting =treemacs-collapse-dirs=.
 - Fixed "width (un)locked" message appearing when treemacs is loaded.
 - Add =persp-mode= integration (thanks to Seong Yong-ju)
+- Fixed default sort order (thanks to Michael Peyton Jones)
+- Deleted default values to track upstream behavior
+  (thanks to Michael Peyton Jones)
+- Removed obsolete options (thanks to Michael Peyton Jones)
 **** Typescript
 - Call tsfmt with extension of current buffer for TSX formatting
   (thanks to Victor Andrée)
@@ -3221,9 +3231,9 @@ Other:
   Renner, Adam Frey, Adam Kruszewski, ahanwadi, Aleksandr Argunov, Alexander
   Dalshov, Alexander Eberspächer, Alexander Iljin, Alexander Kjeldaas,
   Alexandros Kotzias, Andrew Grangaard, Andrew Vit, Andriy Senyshyn, Anton
-  Latukha, Antonio Miranda, Anurag Sharma, Archenoth, Arjan Singh, Ather Sharif,
-  Artur Juraszek, Benjamin Reynolds, Bernhard Schommer, Billy Wade, Brian
-  Wignall, bmag, Boris Buliga, Boris Wong, Carl Lange, Cazim Hysi, Chase Adams,
+  Latukha, Antonio Miranda, Anurag Sharma, Apromixately, Archenoth, Arjan Singh,
+  Ather Sharif, Artur Juraszek, Benjamin Reynolds, Bernhard Schommer, Billy Wade,
+  Brian Wignall, bmag, Boris Buliga, Boris Wong, Carl Lange, Cazim Hysi, Chase Adams,
   Christian Bäuerlein, Cibin Mathew, CL123123, Codruț Constantin Gușoi,
   Compro-Prasad, cormacc, Daniel Hodson, Daniel Le, Daniel Molina, Darkhan,
   David Florness, David Parrish, David Vo, davidpham87, Deepu Mohan Puthrote,

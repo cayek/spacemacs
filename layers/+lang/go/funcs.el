@@ -66,6 +66,12 @@
         (lsp))
     (message "`lsp' layer is not installed, please add `lsp' layer to your dotfile.")))
 
+(defun spacemacs//go-setup-dap ()
+  "Conditionally setup go DAP integration."
+  ;; currently DAP is only available using LSP
+  (pcase (spacemacs//go-backend)
+    (`lsp (spacemacs//go-setup-lsp-dap))))
+
 (defun spacemacs//go-setup-lsp-dap ()
   "Setup DAP integration."
   (require 'dap-go)
@@ -79,13 +85,21 @@
   (setq flycheck-disabled-checkers '(go-gofmt
                                      go-golint
                                      go-vet
-                                     go-build
+                                     ;; go-build
                                      go-test
                                      go-errcheck
                                      go-staticcheck
-                                     go-unconvert
-                                     ))
-  (flycheck-golangci-lint-setup))
+                                     go-unconvert)
+        flycheck-golangci-lint-tests t
+        flycheck-golangci-lint-enable-all t)
+  (flycheck-golangci-lint-setup)
+
+  ;; Make sure to only run golangci after go-build
+  ;; to ensure we show at least basic errors in the buffer
+  ;; when golangci fails.
+  ;; See #13580 for details
+  (flycheck-add-next-checker 'go-build 'golangci-lint t)
+  (flycheck-select-checker 'go-build))
 
 
 ;; run

@@ -343,12 +343,18 @@
 
       (evil-define-key 'insert vterm-mode-map
         (kbd "C-w") 'vterm-send-C-w
+        (kbd "C-<right>") 'vterm-send-M-f
+        (kbd "C-<left>") 'vterm-send-M-b
         (kbd "C-y") 'vterm-yank)
 
       (evil-define-key 'normal vterm-mode-map
         [escape] 'vterm-send-escape
         [return] 'vterm-send-return
         (kbd "C-w") 'vterm-send-C-w
+        (kbd "C-<right>") 'vterm-send-M-f
+        (kbd "C-<left>") 'vterm-send-M-b
+        (kbd "$") 'vterm-send-C-e
+        (kbd "^") 'vterm-send-C-a
         (kbd "p") 'vterm-yank
         (kbd "u") 'vterm-undo)
 

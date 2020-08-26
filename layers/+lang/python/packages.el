@@ -294,6 +294,8 @@
                pytest-pdb-one
                pytest-all
                pytest-pdb-all
+               pytest-last-failed
+               pytest-pdb-last-failed
                pytest-module
                pytest-pdb-module)
     :init (spacemacs//bind-python-testing-keys)
